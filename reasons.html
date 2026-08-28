@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Things That Make You... You ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at top left, #fff0f5, transparent 40%),
+                radial-gradient(circle at bottom right, #ffe9f0, transparent 40%),
+                #fff8fa;
+
+            font-family: Georgia, "Times New Roman", serif;
+            color: #6d4b56;
+
+            padding: 25px;
+        }
+
+        .reasons-page {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .small-text {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #b78393;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(32px, 8vw, 48px);
+            font-weight: normal;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            color: #806c73;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        /* Reason box */
+
+        .reason-box {
+            background: #ffffff;
+
+            min-height: 170px;
+
+            padding: 35px 30px;
+
+            border-radius: 25px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            box-shadow: 0 10px 30px rgba(170, 100, 125, 0.12);
+
+            margin-bottom: 25px;
+        }
+
+        #reason {
+            font-size: 20px;
+            line-height: 1.7;
+            color: #6d4b56;
+
+            transition: opacity 0.3s ease;
+        }
+
+        /* Button */
+
+        .reason-button {
+            border: 1px solid #e7b5c6;
+
+            background: #ffffff;
+
+            color: #6d4b56;
+
+            padding: 14px 30px;
+
+            border-radius: 30px;
+
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            box-shadow: 0 7px 20px rgba(170, 100, 125, 0.12);
+
+            transition: all 0.3s ease;
+        }
+
+        .reason-button:hover {
+            transform: translateY(-3px);
+
+            box-shadow: 0 12px 25px rgba(170, 100, 125, 0.18);
+        }
+
+        .counter {
+            margin-top: 18px;
+
+            font-size: 13px;
+
+            color: #b78393;
+        }
+
+        .heart {
+            margin-top: 25px;
+
+            font-size: 23px;
+
+            color: #d77c9b;
+
+            animation: heartbeat 1.8s infinite ease-in-out;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .reason-box {
+                min-height: 190px;
+                padding: 30px 22px;
+            }
+
+            #reason {
+                font-size: 18px;
+            }
+
+            .subtitle {
+                font-size: 15px;
+            }
+        }
+
+   .final-message {
+    display: block; !important;
+    margin-top: 30px;
+    padding: 20px 25px;
+    color: #806c73;
+    font-size: 17px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.final-message.show {
+    display: block;
+}
+
+ </style>
+</head>
+
+<body>
+
+    <main class="reasons-page">
+
+        <div class="small-text">
+            A few of the many reasons
+        </div>
+
+        <h1>
+            Things That Make You...<br>
+            You ♥️
+        </h1>
+
+        <p class="subtitle">
+            Every click, a new reason.
+        </p>
+
+        <div class="reason-box">
+            <p id="reason">
+                Because you are simply my Toto♥️... my Madamji♥️
+            </p>
+        </div>
+
+        <button class="reason-button" onclick="nextReason()">
+            Give me another reason ♡
+        </button>
+
+        <div class="counter" id="counter">
+            Reason 1 of 8
+        </div>
+
+        <div class="heart">
+            ♥
+        </div>
+
+        <div id="final-message" style="display: block !important; margin-top: 30px; padding: 20px 25px; text-align: center; color: #806c73; font-size: 17px; line-height: 1.7;">
+    And after all these reasons, there's still one thing I know for sure...<br>
+    I'm really lucky to have you. ❤️
+</div>
+
+    </main>
+
+
+    <script>
+
+        const reasons = [
+
+            "Because you are simply my Toto♥️... my Madamji♥️",
+
+            "Because you are always Khi khi khi khi with me... Hehe😁",
+
+            "Because you are the most beautiful soul I have met 😘",
+
+            "Because aapke sath random conversation become memory 💗",
+
+            "Because your adorablely Masoom sometime ♥️ (Everytime)",
+
+            "Because you can make me laugh without even trying 😙",
+
+            "Because behind all the nakhre and Taane, there is a very caring person ♥️🫂",
+
+            "Because... jitni bhi reason du kam hai yaar...<br><br>I LOVE YOU😘"
+
+        ];
+
+        let currentReason = 0;
+
+
+        function nextReason() {
+
+            currentReason++;
+
+            if (currentReason >= reasons.length) {
+                currentReason = 0;
+            }
+
+            const reasonElement = document.getElementById("reason");
+
+            reasonElement.style.opacity = "0";
+
+            setTimeout(() => {
+
+                reasonElement.innerHTML = reasons[currentReason];
+
+                reasonElement.style.opacity = "1";
+
+                document.getElementById("counter").textContent =
+                    "Reason " + (currentReason + 1) + " of " + reasons.length;
+
+            }, 250);
+        }
+
+       if (currentReason === reasons.length - 1) {
+    document.getElementById("final-message").style.display = "block";
+} else {
+    document.getElementById("final-message").style.display = "none";
+}
+
+    </script>
+
+</body>
+</html>

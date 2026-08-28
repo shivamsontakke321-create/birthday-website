@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Something For You ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at top left, #fff0f5, transparent 40%),
+                radial-gradient(circle at bottom right, #ffe9f0, transparent 40%),
+                #fff8fa;
+
+            font-family: Georgia, "Times New Roman", serif;
+            color: #6d4b56;
+        }
+
+        .welcome {
+            text-align: center;
+            padding: 30px;
+            max-width: 600px;
+
+            animation: fadeIn 1.5s ease forwards;
+        }
+
+        .small-text {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            color: #b78393;
+
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(34px, 8vw, 52px);
+            font-weight: normal;
+            line-height: 1.2;
+
+            margin-bottom: 18px;
+        }
+
+        .message {
+            font-size: 17px;
+            line-height: 1.8;
+
+            color: #806c73;
+
+            margin-bottom: 35px;
+        }
+
+        .open-button {
+            display: inline-block;
+
+            padding: 15px 34px;
+
+            background: rgba(255, 255, 255, 0.9);
+
+            color: #6d4b56;
+            text-decoration: none;
+
+            border: 1px solid #e7b5c6;
+            border-radius: 40px;
+
+            font-size: 16px;
+
+            box-shadow:
+                0 8px 25px rgba(170, 100, 125, 0.14);
+
+            transition: all 0.3s ease;
+        }
+
+        .open-button:hover {
+            transform: translateY(-4px) scale(1.03);
+
+            box-shadow:
+                0 14px 30px rgba(170, 100, 125, 0.20);
+        }
+
+        .heart {
+            margin-top: 28px;
+
+            font-size: 22px;
+            color: #d77c9b;
+
+            animation: heartbeat 1.8s infinite ease-in-out;
+        }
+
+        /* Floating hearts */
+        .floating-heart {
+            position: fixed;
+
+            color: #e8b4c5;
+            opacity: 0.4;
+
+            pointer-events: none;
+
+            animation: float 5s linear infinite;
+        }
+
+        .heart1 {
+            left: 12%;
+            bottom: -30px;
+            font-size: 20px;
+            animation-delay: 0s;
+        }
+
+        .heart2 {
+            left: 75%;
+            bottom: -30px;
+            font-size: 16px;
+            animation-delay: 1s;
+        }
+
+        .heart3 {
+            left: 88%;
+            bottom: -30px;
+            font-size: 24px;
+            animation-delay: 2s;
+        }
+
+        .heart4 {
+            left: 30%;
+            bottom: -30px;
+            font-size: 14px;
+            animation-delay: 3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.35;
+            }
+
+            85% {
+                opacity: 0.35;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(25deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .welcome {
+                padding: 25px;
+            }
+
+            .message {
+                font-size: 15px;
+            }
+
+            .open-button {
+                padding: 14px 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating hearts -->
+    <div class="floating-heart heart1">♡</div>
+    <div class="floating-heart heart2">♡</div>
+    <div class="floating-heart heart3">♡</div>
+    <div class="floating-heart heart4">♡</div>
+
+    <main class="welcome">
+
+        <div class="small-text">
+            For Toto ♥️
+        </div>
+
+        <h1>
+            I made something<br>
+            for you...
+        </h1>
+
+        <p class="message">
+            A little something made just for you.<br>
+            Take a moment... there's a story waiting inside. ❤️
+        </p>
+
+        <a href="home.html" class="open-button">
+            Open it ♡
+        </a>
+
+        <div class="heart">
+            ♥
+        </div>
+
+    </main>
+
+</body>
+</html>
